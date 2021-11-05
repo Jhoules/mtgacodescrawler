@@ -1,5 +1,5 @@
 # mtgacodescrawler
-Simple crawler to use on reddit during MTG pre-release times to get free Arena codes as fast as possible :). Don't expect much though, it's really simple, but it works :).
+Simple crawler to use with reddit during MTG pre-release times to get free Arena codes as fast as possible :). Don't expect much though, it's really simple, but it works :).
 
 ## Dependencies
 
