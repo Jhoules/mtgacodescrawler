@@ -15,13 +15,15 @@ run the install.sh script `./install.sh`
 
 ### Getting access to the reddit API
 
-go to https://www.reddit.com/prefs/apps, log in to your reddit account or create one and click "are you a developer? create an app..."
+go to https://www.reddit.com/prefs/apps, log in to your reddit account (or create one) and click on "are you a developer? create an app..."
 
 You should see something like the following
 
 ![alt text][img]
 
 [img]: https://camo.githubusercontent.com/98b9844a49d3ac72cbabaa394069349c22a84bb68304668c47a0ad61f5c63416/687474703a2f2f692e696d6775722e636f6d2f65326b4f5231612e706e67 "image"
+
+fill the entries as you'd please.
 
 copy the text right below "personal use script" to the "appid" entry on the config.txt file and the secret entry to the "secrt" entry on the config.txt file. Also put your
 reddit username and password on the "name" and "pass" entries at config.txt.
