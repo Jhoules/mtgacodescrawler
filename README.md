@@ -9,16 +9,13 @@ make sure to have Python3 installed and pip
 
 ### Installation
 
-git clone the repo to any folder and cd into it
+git clone the repo `git clone https://github.com/Jhoules/mtgacodescrawler`
 
-make a python venv using
-`python3 -m venv venv/` 
-
-then run `source venv/bin/activate` to enter the virtal envoirment and `pip install -r requirements.txt` to install all dependencies.
+run the install.sh script `./install.sh`
 
 ### Getting access to the reddit API
 
-go to https://www.reddit.com/prefs/apps with your logged account and click "are you a developer? create an app..."
+go to https://www.reddit.com/prefs/apps, log in to your reddit account or create one and click "are you a developer? create an app..."
 
 You should see something like the following
 
@@ -31,6 +28,6 @@ reddit username and password on the "name" and "pass" entries at config.txt.
 
 ## Run!
 
-to run, make sure you the virtual enviroment is set (enter the main folder and type `source venv/bin/activate`) and run `./run.sh`.
+to run, just `./run.sh`.
 
 Enjoy :)
