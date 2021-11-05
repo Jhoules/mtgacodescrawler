@@ -20,7 +20,12 @@ def jprint(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
 
-pytesseract.pytesseract.tesseract_cmd='/home/thejhoule/projects/redditcraw/venv/bin/pytesseract'
+print(os.path.dirname(os.path.abspath(__file__)))
+locpath=re.sub('/mtgcraw','',os.path.dirname(os.path.abspath(__file__)))
+
+print(locpath+'/venv/bin/pytesseract')
+
+pytesseract.pytesseract.tesseract_cmd=locpath+'/venv/bin/pytesseract'
 
 with open('config.txt','r') as f:
     login = dict(x.rstrip().split('=',1) for x in f)
@@ -111,8 +116,8 @@ while True:
                 playsound()
 
             # Search body for codes
-            if (len(re.findall('..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?', body, re.I)) != 0) and re.search(title,historytitl) == None:
-                bodymatch.append(re.findall('..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?', body, re.I))
+            if (len(re.findall('[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+', body, re.I)) != 0) and re.search(title,historytitl) == None:
+                bodymatch.append(re.findall('[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+', body, re.I))
 
             # Print post title, time, body text and extracted codes
             if len(bodymatch)!=0 and re.search(title,historytitl) == None:
@@ -146,7 +151,7 @@ while True:
 
                     image = cv2.imread(img_name)
                     text = pytesseract.image_to_string(image)
-                    codefromimg = re.findall('..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?', text, re.I)
+                    codefromimg = re.findall('[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+', text, re.I)
 
                     if codefromimg:
                         print('Match at post: ' + f'{title}\n')
@@ -176,7 +181,7 @@ while True:
                     image = cv2.imread(img_name)
                     text = pytesseract.image_to_string(image)
                     # print(text)
-                    codefromimg = re.findall('..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?-..?.?.?.?.?', text, re.I)
+                    codefromimg = re.findall('[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+-[0-9A-Z]+', text, re.I)
 
                     if codefromimg:
                         print('Match at post: ' + f'{title}\n')
