@@ -20,11 +20,7 @@ def jprint(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
 
-print(os.path.dirname(os.path.abspath(__file__)))
 locpath=re.sub('/mtgcraw','',os.path.dirname(os.path.abspath(__file__)))
-
-print(locpath+'/venv/bin/pytesseract')
-
 pytesseract.pytesseract.tesseract_cmd=locpath+'/venv/bin/pytesseract'
 
 with open('config.txt','r') as f:
